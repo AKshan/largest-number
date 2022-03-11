@@ -1,0 +1,22 @@
+<article>
+  <form #mathForm="ngForm">
+    <div>
+      <label for="number-1">Number 1</label>
+      <input type="text" id="number-1" name="number1" [(ngModel)]="number1" required>
+    </div>
+    <div>
+      <label for="number-2">Number 2</label>
+      <input type="text" id="number-2" name="number2" [(ngModel)]="number2" required>
+    </div>
+    <div>
+      <label for="number-3">Number 3</label>
+      <input type="text" id="number-3" name="number3" [(ngModel)]="number3" required>
+    </div>
+    <button type="submit" [disabled]="!mathForm.form.valid" (click)="calculate(number1, number2, number3)">Calculate
+    </button>
+
+  </form>
+  <h3>{{output}}</h3>
+  <p class="error">{{validation}}</p>
+
+</article>
